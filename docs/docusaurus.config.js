@@ -9,7 +9,7 @@ const config = {
   title: 'Exiled',
   tagline: 'SCP:SL Low Level Plugin Framework',
   url: 'https://exiled-team.github.io',
-  baseUrl: '/Web//',
+  baseUrl: '/Web/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
