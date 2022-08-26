@@ -9,12 +9,12 @@ const config = {
   title: 'Exiled',
   tagline: 'SCP:SL Low Level Plugin Framework',
   url: 'https://exiled-team.github.io',
-  baseUrl: '/EXILED/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Exiled-Team',
-  projectName: 'EXILED',
+  projectName: 'exiled-team.github.io',
 
   presets: [
     [
@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/Exiled-Team/EXILED/tree/master/docs',
+          editUrl: 'https://github.com/Exiled-Team/exiled-team.github.io/tree/master/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
