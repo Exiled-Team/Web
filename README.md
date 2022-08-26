@@ -1,2 +1,0 @@
-# WIP
-Website for EXILED.
