@@ -5,25 +5,28 @@ sidebar_position: 1
 ### Index
 
 - [RoleType, Team, Side, Faction](#roletype-team-side-and-faction)
-- [ItemType](#itemtype)
-- [AmmoType](#ammotype)
-- [DoorType](#doortype)
-- [RoomType](#roomtype)
-- [ElevatorType](#elevatortype)
-- [DamageType](#damagetype)
-- [Damage Handlers](#damagehandlers)
-- [EffectType](#effecttype)
-- [Keycard Permissions](#keycardpermissions)
+- [ItemType](#itemtype-and-category)
 - [DoorLockType](#doorlocktype)
 - [StructureType](#structuretype)
 - [BloodType](#bloodtype)
 - [GeneratorState](#generatorstate)
-- [HotKeyButton](#hotkeybutton)
 - [IntercomStates](#intercomstates)
 - [BroadcastType](#broadcasttype)
 - [Attachment Names](#attachmentnames)
-- [Spawn Reasons](#spawnreasons)
 - [Prefabs](#prefabs)
+
+### Exiled Auto generate documentation
+
+- [Spawn Reasons](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.SpawnReason.html)
+- [HotKeyButton](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.HotkeyButton.html)
+- [AmmoType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.AmmoType.html)
+- [DoorType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.DoorType.html)
+- [RoomType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.RoomType.html)
+- [ElevatorType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.ElevatorType.html)
+- [DamageType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.DamageType.html)
+- [Damage Handlers](#damagehandlers)
+- [EffectType](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.EffectType.html)
+- [Keycard Permissions](https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.KeycardPermissions.html)
 
 ### External resources
 
@@ -36,87 +39,92 @@ sidebar_position: 1
 <details><summary> <b>Roles</b></summary>
 
 ```md title="Latest Updated: 08/23/2021"
-| Id  | RoleType       | Team | Side            | Faction         |
-|-----|----------------|------|-----------------|-----------------|
-| -1  | None           | RIP  | None            | Others          |
-| 0   | Scp173         | SCP  | Scp             | SCP             |
-| 1   | ClassD         | CDP  | ChaosInsurgency | FoundationEnemy |
-| 2   | Spectator      | RIP  | None            | Others          |
-| 3   | Scp106         | SCP  | Scp             | SCP             |
-| 4   | NtfSpecialist  | MTF  | Mtf             | FoundationStaff |
-| 5   | Scp049         | SCP  | Scp             | SCP             |
-| 6   | Scientist      | RSC  | Mtf             | FoundationStaff |
-| 7   | Scp079         | SCP  | Scp             | SCP             |
-| 8   | ChaosConscript | CHI  | ChaosInsurgency | FoundationEnemy |
-| 9   | Scp096         | SCP  | Scp             | SCP             |
-| 10  | Scp0492        | SCP  | Scp             | SCP             |
-| 11  | NtfSergeant    | MTF  | Mtf             | FoundationStaff |
-| 12  | NtfCaptain     | MTF  | Mtf             | FoundationStaff |
-| 13  | NtfPrivate     | MTF  | Mtf             | FoundationStaff |
-| 14  | Tutorial       | TUT  | Tutorial        | Others          |
-| 15  | FacilityGuard  | MTF  | Mtf             | FoundationStaff |
-| 16  | Scp93953       | SCP  | Scp             | SCP             |
-| 17  | Scp93989       | SCP  | Scp             | SCP             |
-| 18  | ChaosRifleman  | CHI  | ChaosInsurgency | FoundationEnemy |
-| 19  | ChaosRepressor | CHI  | ChaosInsurgency | FoundationEnemy |
-| 20  | ChaosMarauder  | CHI  | ChaosInsurgency | FoundationEnemy |
+<ID>    <Role>          <Team>               <Side>           <Faction>
+-1      None            Dead                 None             Unclassified
+0       Scp173          SCPs                 Scp              SCP
+1       ClassD          ClassD               ChaosInsurgency  FoundationEnemy
+2       Spectator       Dead                 None             Unclassified
+3       Scp106          SCPs                 Scp              SCP
+4       NtfSpecialist   FoundationForces     Mtf              FoundationStaff
+5       Scp049          SCPs                 Scp              SCP
+6       Scientist       Scientists           Mtf              FoundationStaff
+7       Scp079          SCPs                 Scp              SCP
+8       ChaosConscript  ChaosInsurgency      ChaosInsurgency  FoundationEnemy
+9       Scp096          SCPs                 Scp              SCP
+10      Scp0492         SCPs                 Scp              SCP
+11      NtfSergeant     FoundationForces     Mtf              FoundationStaff
+12      NtfCaptain      FoundationForces     Mtf              FoundationStaff
+13      NtfPrivate      FoundationForces     Mtf              FoundationStaff
+14      Tutorial        OtherAlive           Tutorial         Unclassified
+15      FacilityGuard   FoundationForces     Mtf              FoundationStaff
+16      Scp939          SCPs                 Scp              SCP
+17      CustomRole      OtherAlive           Tutorial         Unclassified
+18      ChaosRifleman   ChaosInsurgency      ChaosInsurgency  FoundationEnemy
+19      ChaosRepressor  ChaosInsurgency      ChaosInsurgency  FoundationEnemy
+20      ChaosMarauder   ChaosInsurgency      ChaosInsurgency  FoundationEnemy
+21      Overwatch       Dead                 None             Unclassified
 ```
 
 </details>
 
-### ItemType
+### ItemType And Category
 
 <details><summary> <b>Items</b></summary>
 
-```md  title="Latest Updated: 05/08/2022"
-<Item>                        (<id>)
-None                         -1
-KeycardJanitor                0
-KeycardScientist              1
-KeycardResearchCoordinator    2
-KeycardZoneManager            3
-KeycardGuard                  4
-KeycardNTFOfficer             5
-KeycardContainmentEngineer    6
-KeycardNTFLieutenant          7
-KeycardNTFCommander           8
-KeycardFacilityManager        9
-KeycardChaosInsurgency       10
-KeycardO5                    11
-Radio                        12
-GunCOM15                     13
-Medkit                       14
-Flashlight                   15
-MicroHID                     16
-SCP500                       17
-SCP207                       18
-Ammo12gauge                  19
-GunE11SR                     20
-GunCrossvec                  21
-Ammo556x45                   22
-GunFSP9                      23
-GunLogicer                   24
-GrenadeHE                    25
-GrenadeFlash                 26
-Ammo44cal                    27
-Ammo762x39                   28
-Ammo9x19                     29
-GunCOM18                     30
-SCP018                       31
-SCP268                       32
-Adrenaline                   33
-Painkillers                  34
-Coin                         35
-ArmorLight                   36
-ArmorCombat                  37
-ArmorHeavy                   38
-GunRevolver                  39
-GunAK                        40
-GunShotgun                   41
-SCP330                       42
-SCP2176                      43
-SCP244a                      44
-SCP244b                      45
+```md  title="Latest Updated: 14/03/2023"
+<Item>                      <id>   <category>   
+None                         -1      None
+KeycardJanitor                0      Keycard
+KeycardScientist              1      Keycard
+KeycardResearchCoordinator    2      Keycard
+KeycardZoneManager            3      Keycard
+KeycardGuard                  4      Keycard
+KeycardNTFOfficer             5      Keycard
+KeycardContainmentEngineer    6      Keycard     
+KeycardNTFLieutenant          7      Keycard
+KeycardNTFCommander           8      Keycard
+KeycardFacilityManager        9      Keycard
+KeycardChaosInsurgency       10      Keycard
+KeycardO5                    11      Keycard
+Radio                        12      Radio
+GunCOM15                     13      Firearm
+Medkit                       14      Medical
+Flashlight                   15      None
+MicroHID                     16      MicroHID
+SCP500                       17      SCPItem
+SCP207                       18      SCPItem
+Ammo12gauge                  19      Ammo
+GunE11SR                     20      Firearm
+GunCrossvec                  21      Firearm
+Ammo556x45                   22      Ammo
+GunFSP9                      23      Firearm
+GunLogicer                   24      Firearm
+GrenadeHE                    25      Grenade
+GrenadeFlash                 26      Grenade
+Ammo44cal                    27      Ammo
+Ammo762x39                   28      Ammo
+Ammo9x19                     29      Ammo
+GunCOM18                     30      Ammo
+SCP018                       31      SCPItem
+SCP268                       32      SCPItem
+Adrenaline                   33      Medical
+Painkillers                  34      Medical
+Coin                         35      None
+ArmorLight                   36      Armor
+ArmorCombat                  37      Armor
+ArmorHeavy                   38      Armor
+GunRevolver                  39      Firearm
+GunAK                        40      Firearm
+GunShotgun                   41      Firearm
+SCP330                       42      SCPItem
+SCP2176                      43      SCPItem
+SCP244a                      44      SCPItem
+SCP244b                      45      SCPItem
+SCP1853                      46      SCPItem
+ParticleDisruptor            47      Firearm
+GunCom45                     48      Firearm
+SCP1576                      49      SCPItem
+Jailbird                     50      Firearm
 ```
 
 </details>
@@ -132,178 +140,6 @@ Nato556
 Nato762
 Ammo12Gauge
 Ammo44Cal
-```
-
-</details>
-
-### DoorType
-
-<details><summary> <b>Doors</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-UnknownDoor
-Scp914Door
-GR18Inner
-Scp049Gate
-Scp049Armory
-Scp079First
-Scp079Second
-Scp096
-Scp106Bottom
-Scp106Primary
-Scp106Secondary
-Scp173Gate
-Scp173Connector
-Scp173Armory
-Scp173Bottom
-GR18Gate
-Scp914Gate
-CheckpointEntrance
-CheckpointLczA
-CheckpointLczB
-EntranceDoor
-EscapePrimary
-EscapeSecondary
-ServersBottom
-GateA
-GateB
-HczArmory
-HeavyContainmentDoor
-HID
-HIDLeft
-HIDRight
-Intercom
-LczArmory
-LczCafe
-LczWc
-LightContainmentDoor
-NukeArmory
-NukeSurface
-PrisonDoor
-SurfaceGate
-Scp330
-Scp330Chamber
-```
-
-</details>
-
-
-
-### RoomType
-
-<details><summary> <b>Rooms</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-Unknown
-LczArmory
-LczCurve
-LczStraight
-Lcz330
-Lcz914
-LczCrossing
-LczTCross
-LczCafe
-LczPlants
-LczToilets
-LczAirlock
-Lcz173
-LczClassDSpawn
-LczChkpB
-LczGlassBox
-LczChkpA
-Hcz079
-HczEzCheckpoint
-HczArmory
-Hcz939
-HczHid
-Hcz049
-HczChkpA
-HczCrossing
-Hcz106
-HczNuke
-HczTesla
-HczServers
-HczChkpB
-HczTCross
-HczCurve
-Hcz096
-EzVent
-EzIntercom
-EzGateA
-EzDownstairsPcs
-EzCurve
-EzPcs
-EzCrossing
-EzCollapsedTunnel
-EzConference
-EzStraight
-EzCafeteria
-EzUpstairsPcs
-EzGateB
-EzShelter
-Pocket
-Surface
-```
-
-</details>
-
-### ElevatorType
-
-<details><summary> <b>Elevators</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-Unknown
-GateA
-GateB
-Nuke
-Scp049
-LczA
-LczB
-```
-
-</details>
-
-### DamageType
-
-<details><summary> <b>DamageType</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-Unknown
-Falldown
-Warhead
-Decontamination
-Asphyxiation
-Poison
-Bleeding
-MicroHid
-Tesla
-Scp
-Explosion
-Scp018
-Scp207
-Recontainment
-Crushed
-FemurBreaker
-PocketDimension
-FriendlyFireDetector
-SeveredHands
-Custom
-Scp049
-Scp0492
-Scp096
-Scp173
-Scp106
-Scp939
-Crossvec
-Logicer
-Revolver
-Shotgun
-AK
-Com15
-Com18
-Fsp9
-E11Sr
-Hypothermia
 ```
 
 </details>
@@ -331,85 +167,6 @@ PlayerStatsSystem::Scp096DamageHandler : AttackerDamageHandler
 PlayerStatsSystem::MicroHidDamageHandler : AttackerDamageHandler
 PlayerStatsSystem::ExplosionDamageHandler : AttackerDamageHandler
 PlayerStatsSystem::Scp018DamageHandler : AttackerDamageHandler
-```
-
-</details>
-
-### EffectType
-
-<details><summary> <b>Effects</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-Amnesia
-Asphyxiated
-Bleeding
-Blinded
-Burned
-Concussed
-Corroding
-Deafened
-Decontaminating
-Disabled
-Ensnared
-Exhausted
-Flashed
-Hemorrhage
-Invigorated
-BodyshotReduction
-Poisoned
-Scp207
-Invisible
-SinkHole
-Visuals939
-DamageReduction
-MovementBoost
-RainbowTaste
-SeveredHands
-Stained
-Visual173Blink
-Vitality
-Hypothermia
-Scp1853
-```
-
-</details>
-
-### KeycardPermissions
-
-<details><summary> <b>Keycard Perms</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-<0> None
-<1> Checkpoints
-<2> ExitGates
-<4> Intercom
-<8> AlphaWarhead
-<16> ContainmentLevelOne
-<32> ContainmentLevelTwo
-<64> ContainmentLevelThree
-<128> ArmoryLevelOne
-<256> ArmoryLevelTwo
-<512> ArmoryLevelThree
-<1024> ScpOverride
-```
-
-</details>
-
-### DoorLockType
-
-<details><summary> <b>Lock Type</b></summary>
-
-```md title="Latest Updated: 05/08/2022"
-[0] <unlocked> None 
-[1] Regular079 
-[2] Lockdown079 
-[4] Warhead 
-[8] AdminCommand
-[16] DecontLockdown
-[32] DecontEvacuate
-[64] SpecialDoorFeature
-[128] NoPower
-[256] Isolation
 ```
 
 </details>
@@ -464,17 +221,6 @@ Faded
 
 </details>
 
-### HotKeyButton
-
-<details><summary> <b>Hot Keys</b></summary>
-
-```md title="Latest Updated: 02/13/2022"
-Keycard
-PrimaryFirearm
-SecondaryFirearm
-Medical
-Grenade
-```
 
 </details>
 
@@ -559,25 +305,6 @@ ShotgunExtendedBarrel
 NoRifleStock
 ShotgunSingleShot
 ShotgunDoubleShot
-```
-
-</details>
-
-### SpawnReasons
-
-<details><summary> <b>Spawn Reasons</b></summary>
-
-```md title="Latest Updated: 02/13/2022"
-None
-RoundStart
-LateJoin
-Respawn
-Died
-Escaped
-Revived
-ForceClass
-Overwatch
-
 ```
 
 </details>
