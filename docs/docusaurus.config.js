@@ -66,6 +66,12 @@ const config = {
             label: 'Exiled Hosting',
           },
           {
+            type: 'https://exiled-team.github.io/EXILED/api/Exiled.API.Enums.html',
+            docId: 'documentation',
+            position: 'left',
+            label: 'Exiled API Documentation',
+          },
+          {
             href: 'https://github.com/Exiled-Team/EXILED',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
